@@ -1,6 +1,6 @@
 Package.describe({
   name: "jorgenvatle:redis-oplog-fork",
-  version: "3.0.1",
+  version: "3.0.2",
   // Brief, one-line summary of the package.
   summary: "This is a fork of redis-oplog. " +
       "Credit to @matheusccastroo for the PR this is based on.",
