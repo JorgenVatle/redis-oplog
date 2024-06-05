@@ -2,8 +2,8 @@ Package.describe({
   name: "jorgenvatle:redis-oplog-fork",
   version: "3.0.0",
   // Brief, one-line summary of the package.
-  summary: "This is a fork of the redis-oplog intended for use with Meteor v3 until the original package is updated." +
-      " Credit to @matheusccastroo for the pull request that this fork is based on.",
+  summary: "This is a fork of redis-oplog. " +
+      "Credit to @matheusccastroo for the pull request that this fork is",
   // URL to the Git repository containing the source code for this package.
   git: "https://github.com/cult-of-coders/redis-oplog",
   // By default, Meteor will default to using README.md for documentation.
