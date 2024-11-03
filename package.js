@@ -7,23 +7,22 @@ if (!METEOR_RELEASE || !PACKAGE_JSON) {
   )
 }
 
-const versionsFrom = [METEOR_RELEASE];
+const [METEOR_MAJOR, METEOR_MINOR] = METEOR_RELEASE.split('.')
+const versionsFrom = [`${METEOR_MAJOR}.${METEOR_MINOR}`];
+
 const [_, minor, patch] = JSON.parse(PACKAGE_JSON).version.split('.');
-let major = '3';
 
 if (METEOR_RELEASE.startsWith('2')) {
-  major = 2;
-  versionsFrom.unshift('2.14.0');
+  versionsFrom.push('2.14');
 } else {
-  major = 3
-  versionsFrom.unshift('3.0.0');
+  if (!versionsFrom.includes('3.0')) {
+    versionsFrom.unshift('3.0');
+  }
 }
-
-
 
 Package.describe({
   name: "jorgenvatle:redis-oplog-fork",
-  version: `${major}.${minor}.${patch}`,
+  version: `${METEOR_MAJOR}.${minor}.${patch}`,
   // Brief, one-line summary of the package.
   summary: "This is a fork of redis-oplog. " +
       "Credit to @matheusccastroo for the PR this is based on.",
