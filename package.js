@@ -7,13 +7,16 @@ if (!METEOR_RELEASE || !PACKAGE_JSON) {
   )
 }
 
-let major = '3';
-let versionsFrom = ['3.0.0', '3.0.4'];
+const versionsFrom = [METEOR_RELEASE];
 const [_, minor, patch] = JSON.parse(PACKAGE_JSON).version.split('.');
-if (METEOR_RELEASE.startsWith('2')) {
+let major = '3';
 
+if (METEOR_RELEASE.startsWith('2')) {
   major = 2;
-  versionsFrom = ['2.14.0', '2.16.0'];
+  versionsFrom.unshift('2.14.0');
+} else {
+  major = 3
+  versionsFrom.unshift('3.0.0');
 }
 
 
