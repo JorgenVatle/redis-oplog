@@ -1,6 +1,17 @@
+const { METEOR_VERSION = '3.0.3' } = process.env;
+
+let major = '3';
+let versionsFrom = ['3.0.0', '3.0.4'];
+
+if (METEOR_VERSION.startsWith('2')) {
+  major = 2;
+  versionsFrom = ['2.14.0', '2.16.0'];
+}
+
+
 Package.describe({
   name: "jorgenvatle:redis-oplog-fork",
-  version: "3.0.4",
+  version: `${major}.0.4`,
   // Brief, one-line summary of the package.
   summary: "This is a fork of redis-oplog. " +
       "Credit to @matheusccastroo for the PR this is based on.",
@@ -18,7 +29,7 @@ Npm.depends({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom(["3.0.2"]);
+  api.versionsFrom(versionsFrom);
   api.use([
     "underscore",
     "ecmascript",
