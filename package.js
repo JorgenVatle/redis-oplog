@@ -1,8 +1,8 @@
-const { METEOR_VERSION = '3.0.3' } = process.env;
+const { METEOR_VERSION = '3.0.3', PACKAGE_JSON } = process.env;
 
 let major = '3';
 let versionsFrom = ['3.0.0', '3.0.4'];
-const [_, minor, patch] = require('./package.json').version.split('.');
+const [_, minor, patch] = JSON.parse(PACKAGE_JSON).version.split('.');
 
 if (METEOR_VERSION.startsWith('2')) {
   major = 2;

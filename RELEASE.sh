@@ -5,6 +5,7 @@
 # Then run this script, it will use the package.json version
 # as a base for the package.js version.
 
+
 publish() {
   for METEOR_RELEASE in "3.0.4" "2.16.0"; do
     export METEOR_RELEASE
@@ -12,5 +13,8 @@ publish() {
     meteor publish --release $METEOR_RELEASE || exit 1
   done;
 }
+
+PACKAGE_JSON=$(cat ./package.json)
+export PACKAGE_JSON
 
 publish
