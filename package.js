@@ -2,6 +2,7 @@ const { METEOR_VERSION = '3.0.3' } = process.env;
 
 let major = '3';
 let versionsFrom = ['3.0.0', '3.0.4'];
+const [_, minor, patch] = require('./package.json').version.split('.');
 
 if (METEOR_VERSION.startsWith('2')) {
   major = 2;
@@ -9,9 +10,10 @@ if (METEOR_VERSION.startsWith('2')) {
 }
 
 
+
 Package.describe({
   name: "jorgenvatle:redis-oplog-fork",
-  version: `${major}.0.4`,
+  version: `${major}.${minor}.${patch}`,
   // Brief, one-line summary of the package.
   summary: "This is a fork of redis-oplog. " +
       "Credit to @matheusccastroo for the PR this is based on.",
