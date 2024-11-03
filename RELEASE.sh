@@ -7,7 +7,7 @@
 
 
 publish() {
-  for METEOR_RELEASE in "3.0.4" "2.16.0"; do
+  for METEOR_RELEASE in "3.0.3" "2.16.0"; do
     export METEOR_RELEASE
     echo "Publishing package using Meteor v$METEOR_RELEASE"
     meteor publish --release $METEOR_RELEASE || exit 1
