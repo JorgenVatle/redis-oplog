@@ -1,6 +1,6 @@
-const { METEOR_VERSION, PACKAGE_JSON } = process.env;
+const { METEOR_RELEASE, PACKAGE_JSON } = process.env;
 
-if (!METEOR_VERSION || !PACKAGE_JSON) {
+if (!METEOR_RELEASE || !PACKAGE_JSON) {
   throw new Error(
     'Use the RELEASE.sh script to publish the package. It will prefill required environment ' +
     'variables for you'
@@ -10,7 +10,7 @@ if (!METEOR_VERSION || !PACKAGE_JSON) {
 let major = '3';
 let versionsFrom = ['3.0.0', '3.0.4'];
 const [_, minor, patch] = JSON.parse(PACKAGE_JSON).version.split('.');
-if (METEOR_VERSION.startsWith('2')) {
+if (METEOR_RELEASE.startsWith('2')) {
 
   major = 2;
   versionsFrom = ['2.14.0', '2.16.0'];
