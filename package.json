@@ -1,6 +1,6 @@
 {
   "name": "redis-oplog",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Replacement for Meteor's MongoDB oplog implementation",
   "directories": {
     "doc": "docs",
