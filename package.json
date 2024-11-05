@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/cult-of-coders/redis-oplog#readme",
   "devDependencies": {
+    "@types/meteor": "^2.9.8",
     "prettier": "^3.2.5"
   }
 }
