@@ -20,7 +20,7 @@ Npm.depends({
 Package.onUse(function (api) {
   api.versionsFrom(['3.1']);
   api.use([
-    "underscore",
+    "underscore", // todo: incompatible with 3.1 (needs refactor)
     "ecmascript",
     "ejson",
     "minimongo",
