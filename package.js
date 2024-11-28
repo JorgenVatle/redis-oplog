@@ -38,7 +38,7 @@ Package.onUse(function (api) {
 });
 
 Package.onTest(function (api) {
-  api.use("cultofcoders:redis-oplog");
+  api.use("jorgenvatle:redis-oplog-fork");
 
   // extensions
   api.use("aldeed:collection2@4.0.1");
