@@ -1,28 +1,6 @@
-const { METEOR_RELEASE, PACKAGE_JSON } = process.env;
-
-if (!METEOR_RELEASE || !PACKAGE_JSON) {
-  throw new Error(
-    'Use the RELEASE.sh script to publish the package. It will prefill required environment ' +
-    'variables for you'
-  )
-}
-
-const [METEOR_MAJOR, METEOR_MINOR] = METEOR_RELEASE.split('.')
-const versionsFrom = [`${METEOR_MAJOR}.${METEOR_MINOR}`];
-
-const [_, minor, patch] = JSON.parse(PACKAGE_JSON).version.split('.');
-
-if (METEOR_RELEASE.startsWith('2')) {
-  versionsFrom.push('2.14');
-} else {
-  if (!versionsFrom.includes('3.0')) {
-    versionsFrom.unshift('3.0');
-  }
-}
-
 Package.describe({
   name: "jorgenvatle:redis-oplog-fork",
-  version: `${METEOR_MAJOR}.${minor}.${patch}`,
+  version: `1.1.0`,
   // Brief, one-line summary of the package.
   summary: "This is a fork of redis-oplog. " +
       "Credit to @matheusccastroo for the PR this is based on.",
@@ -40,7 +18,7 @@ Npm.depends({
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom(versionsFrom);
+  api.versionsFrom(['3.1']);
   api.use([
     "underscore",
     "ecmascript",
