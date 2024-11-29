@@ -20,7 +20,7 @@ Npm.depends({
 Package.onUse(function (api) {
   api.versionsFrom(['3.1']);
   api.use([
-    "underscore", // todo: incompatible with 3.1 (needs refactor)
+    "underscore@1.6.4", // todo: remove: package is not part of Meteor core since v3.1
     "ecmascript",
     "ejson",
     "minimongo",
